@@ -1,0 +1,128 @@
+.header {
+	padding-top: 24px;
+	padding-bottom: 24px;
+
+	.auto-container {
+		@include flex(row, center, space-between);
+	}
+
+	&__logo {
+		display: block;
+		width: 40px;
+		height: 40px;
+
+		img {
+			@include fill(contain);
+		}
+	}
+
+	&__nav {
+		@include flex(row, center, flex-end);
+
+		&-wrapper {
+			flex: 0;
+			opacity: 0;
+			@include flex();
+			overflow: hidden;
+			max-width: fit-content;
+			@include transition(0.5s);
+		}
+
+		&-link {
+			display: block;
+			margin: 0 10px;
+			font-family: $mainItalic, serif;
+			color: var(--text-color);
+			font-style: italic;
+			font-weight: 300;
+			font-size: 14.5px;
+			line-height: 18px;
+			position: relative;
+			transform: translateY(18px);
+			@include transition(200ms);
+
+			&::before {
+				content: attr(data-before);
+				transform: translateY(0);
+				position: absolute;
+				top: -18px;
+			}
+
+			&:hover {
+				transform: translateY(0px);
+			}
+		}
+
+		&-toggle {
+			margin-left: 52px;
+			position: relative;
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+			background: var(--bg-site);
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				display: block;
+				height: 2px;
+				width: 38px;
+				background: linear-gradient(to right, #fff);
+				margin-bottom: 8px;
+				@include transition();
+				border-radius: 2px;
+
+				&:nth-child(1) {
+					width: 20px;
+					margin-top: -8px;
+				}
+				&:nth-child(3) {
+					width: 20px;
+					margin-top: 8px;
+				}
+			}
+
+			&:hover {
+				span {
+					&:nth-child(1) {
+						transform: translate(calc(-50% + 9px), -50%);
+					}
+
+					&:nth-child(3) {
+						transform: translate(calc(-50% - 9px), -50%);
+					}
+				}
+			}
+		}
+
+		&.open &-wrapper {
+			width: 100%;
+			flex: 1;
+			opacity: 1;
+		}
+
+		&.open &-toggle {
+			span {
+				&:nth-child(1) {
+					transform: translate(-50%, -50%) rotate(135deg);
+					margin-top: 0;
+					width: 38px;
+					background: linear-gradient(to right, #fff 50%, transparent 50%);
+				}
+
+				&:nth-child(2) {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+
+				&:nth-child(3) {
+					transform: translate(-50%, -50%) rotate(135deg);
+					background: linear-gradient(to right, transparent 50%, #fff 50%);
+					margin-top: 0;
+					width: 38px;
+				}
+			}
+		}
+	}
+}

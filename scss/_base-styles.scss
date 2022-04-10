@@ -1,0 +1,100 @@
+/**************************************************
+base
+**************************************************/
+
+*::after,
+*::before,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0 !important;
+	-webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+	background-color: var(--bg-site);
+	width: 8px;
+
+	@include xl {
+		width: 5px;
+	}
+}
+
+::-webkit-scrollbar-thumb {
+	width: 100%;
+	border-radius: 10px;
+	background: var(--scroll);
+}
+
+::selection {
+	background: var(--primary);
+	color: var(--bg-site);
+}
+
+html,
+body {
+	color: var(--text-color);
+	background-color: var(--bg-site);
+
+	@include xs {
+		min-width: 320px;
+		min-height: 320px;
+	}
+}
+
+p {
+	@include transition();
+	font-family: $mainP, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 160%;
+	letter-spacing: -0.02em;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.col-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.page-wrapper {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background-color: var(--bg-site);
+}
+
+.page-content {
+	flex: 1;
+}
+
+.c-scrollbar_thumb {
+	background: #fff;
+}
+
+#viewport {
+	overflow: hidden;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#content {
+	overflow: visible;
+	width: 100%;
+}

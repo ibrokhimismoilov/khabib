@@ -1,0 +1,59 @@
+/**************************************************
+font-face
+**************************************************/
+
+@font-face {
+	font-family: $fontHeroTitle;
+	src: url("../../fonts/Sequel_100_Black/Sequel100Black-85.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: $mainSubtitle;
+	src: url("../../fonts/untitled_sans_font_family/UntitledSans-Bold.otf") format("opentype");
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: $allCaps;
+	src: url("../../fonts/untitled_sans_font_family/UntitledSans-Medium.otf") format("opentype");
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: $contentSubtitle;
+	src: url("../../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: $mainP;
+	src: url("../../fonts/untitled_sans_font_family/UntitledSans-Regular.otf") format("opentype");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: $mainItalic;
+	src: url("../../fonts/IvyJournal/IvyJournal-LightItalic.otf") format("opentype");
+	font-style: normal;
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: $formText;
+	src: url("../../fonts/untitled_sans_font_family/UntitledSans-RegularItalic.otf") format("opentype");
+	font-style: normal;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: $navMenu;
+	src: url("../../fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 700;
+}

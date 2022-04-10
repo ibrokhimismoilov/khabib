@@ -1,0 +1,91 @@
+/**************************************************
+mixins
+**************************************************/
+
+// transition
+@mixin transition($time: 0.3s, $timingFunction: ease-out, $property: all) {
+	transition: $property $time $timingFunction;
+}
+
+//flex
+@mixin center($direction: row) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: $direction;
+}
+
+@mixin flex($direction: row, $items: center, $justify: center, $wrap: nowrap, $flex: flex) {
+	display: $flex;
+	align-items: $items;
+	justify-content: $justify;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+@mixin sliceText($num: 1) {
+	display: -webkit-box !important;
+	-webkit-line-clamp: $num !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+	word-break: break-all;
+}
+
+@mixin font($col: var(--text-color), $size: 16px, $lh: 1.5, $font: $mt, $fw: 400) {
+	font-size: $size;
+	line-height: $lh;
+	font-family: $font, sans-serif;
+	font-weight: $fw;
+	color: $col;
+}
+
+@mixin fill($fit: cover, $posX: center, $posY: center, $w: 100%, $h: 100%) {
+	width: $w;
+	height: $h;
+	object-fit: $fit;
+	object-position: $posX $posY;
+}
+
+// responsive
+@mixin xxs {
+	@media only screen and (max-width: $xxs) {
+		@content;
+	}
+}
+
+@mixin xs {
+	@media only screen and (max-width: $xs) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media only screen and (max-width: $sm) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media only screen and (max-width: $md) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media only screen and (max-width: $lg) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media only screen and (max-width: $xl) {
+		@content;
+	}
+}
+
+@mixin xxl {
+	@media only screen and (max-width: $xxl) {
+		@content;
+	}
+}

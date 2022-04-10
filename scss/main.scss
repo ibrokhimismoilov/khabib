@@ -1,0 +1,35 @@
+/**************************************************
+base
+**************************************************/
+@import "variable";
+@import "base/normalize";
+@import "base/fonts";
+@import "base/mixins";
+@import "base/text";
+@import "base-styles";
+
+/**************************************************
+components
+**************************************************/
+@import "components/aos";
+@import "components/btn";
+@import "components/bootstrap-grid";
+@import "components/auto-container";
+@import "components/animation";
+@import "components/to-top";
+@import "components/breadcrumb";
+@import "components/ui";
+@import "components/base-pagination";
+
+@import "components/project/hero-navbar";
+
+/**************************************************
+Layout
+**************************************************/
+@import "sections/header";
+@import "sections/footer";
+
+/**************************************************
+Sections and pages
+**************************************************/
+// @import "sections/banner";

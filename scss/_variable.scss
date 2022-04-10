@@ -1,0 +1,47 @@
+/**************************************************
+root
+**************************************************/
+
+:root {
+	// base-colors
+	--light: #ffffff;
+	--primary: #ffffff;
+	--scroll: rgba(255, 255, 255, 0.4);
+	--dark: #000000;
+	--brand: linear-gradient(94.71deg, #d6e5ea -7.04%, #e5dbf3 47.47%);
+	--brand2: #131b24;
+
+	// text
+	--text-color: #ffffff;
+	--text-dark: #131b24;
+	--text-4: rgba(255, 255, 255, 0.4);
+
+	--bg-site: #131b24;
+	--border-color: rgba(255, 255, 255, 0.4);
+}
+
+// sizes
+$xxs: 419px;
+$xs: 575px;
+$sm: 767px;
+$md: 991px;
+$lg: 1199px;
+$xl: 1399px;
+$xxl: 1800px;
+$autoContainer: 1750px;
+$gutter: 20px;
+
+// Fonts
+// Montserrat Fonts
+$fontHeroTitle: "Sequel100Black-85";
+$mainSubtitle: "Untitled Sans Bold";
+$allCaps: "Untitled Sans Medium";
+$contentSubtitle: "Roboto Medium";
+$mainP: "Untitled Sans";
+$mainItalic: "Ivy Journal Italic";
+$projectName: $allCaps;
+$formText: "Untitled Sans Italic";
+$navMenu: "Montserrat Bold";
+
+// timing-functions
+$cubic-slow: cubic-bezier(0.7, 0.01, 0.37, 1);

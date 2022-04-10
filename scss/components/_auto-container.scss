@@ -1,0 +1,57 @@
+/**************************************************
+.auto-container
+**************************************************/
+
+.auto-container {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter;
+	padding-right: $gutter;
+	width: 100%;
+
+	// .auto-container size for fullhd template
+	max-width: $autoContainer;
+
+	@include xxl {
+		max-width: 1320px;
+	}
+	@include xl {
+		max-width: 1140px;
+	}
+	@include lg {
+		max-width: 960px;
+	}
+	@include md {
+		max-width: 720px;
+	}
+	@include sm {
+		max-width: 100%;
+	}
+	@include xs {
+		max-width: 100%;
+	}
+	// @include xxs {
+	// 	max-width: 100%;
+	// }
+
+	&-fluid {
+		padding-right: 30px;
+		padding-left: 30px;
+		max-width: 100%;
+		width: 100%;
+	}
+
+	&-sm {
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: $gutter;
+		padding-right: $gutter;
+		max-width: 950px;
+		width: 100%;
+
+		@include sm {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+}

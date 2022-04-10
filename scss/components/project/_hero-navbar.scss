@@ -1,0 +1,26 @@
+.hero-navbar {
+	&__inner {
+		padding-top: 45px;
+		padding-bottom: 30px;
+		@include flex(row, center, space-between);
+	}
+	&__logo {
+		width: 55px;
+		height: 55px;
+		display: block;
+
+		img {
+			@include fill(contain);
+		}
+	}
+
+	&__cup {
+		width: 58px;
+		height: 64px;
+		display: block;
+
+		img {
+			@include fill(contain);
+		}
+	}
+}
