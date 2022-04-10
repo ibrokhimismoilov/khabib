@@ -1,0 +1,8 @@
+.hero {
+	min-height: 100vh;
+
+	.avatar {
+		min-height: 100vh;
+		@include flex();
+	}
+}
