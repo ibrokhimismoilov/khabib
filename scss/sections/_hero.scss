@@ -1,9 +1,26 @@
 .hero {
-	min-height: 150vh;
-	padding-bottom: 50vh;
-	@include flex();
+	min-height: 120vh;
+	padding-bottom: 20vh;
+	@include flex(row, flex-start, center);
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	&-ornate {
+		width: 100%;
+		height: 60vh;
+		position: absolute;
+		left: 0;
+		top: 110px;
+		width: 500%;
+		background-image: url("../../images/png/ornate.png");
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+		animation: heroOrnate 60s linear infinite backwards;
+	}
 
 	.avatar {
+		background-color: var(--bg-site);
 		&__inner {
 			position: relative;
 			width: 372px;
@@ -33,6 +50,7 @@
 	}
 
 	&__center {
+		margin-top: 110px;
 		@include flex(column);
 	}
 

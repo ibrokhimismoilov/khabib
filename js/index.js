@@ -1,9 +1,8 @@
 gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin();
 
 smoothScroll("#content");
 
-const horizontalSections = gsap.utils.toArray("section.horizontal");
+const horizontalSections = gsap.utils.toArray(".horizontal");
 
 horizontalSections.forEach(function (sec, i) {
 	var thisPinWrap = sec.querySelector(".pin-wrap");
@@ -120,7 +119,6 @@ function smoothScroll(content, viewport, smoothness) {
 		onRefresh: killScrub // when the screen resizes, we just want the animation to immediately go to the appropriate spot rather than animating there, so basically kill the scrub.
 	});
 }
-
 // ====================================================================================================================
 
 const meTl = gsap.timeline({
@@ -140,7 +138,7 @@ meTl.from(
 		yPercent: 100,
 		ease: "elastic.out(0.5, 0.4)"
 	},
-	0.5
+	0
 )
 	.from(
 		".head , .hair , .shadow",
@@ -245,15 +243,6 @@ blink
 		},
 		0.15
 	);
-
-// CustomWiggle.create("myWiggle", {
-//   wiggles: 6,
-//   type: "ease-out"
-// });
-// CustomWiggle.create("ease-in-out", {
-//   wiggles: 4,
-//   type: "ease-in-out"
-// });
 
 const dizzy = gsap.timeline({
 	paused: true,
@@ -490,31 +479,11 @@ function updateWindowSize() {
 updateWindowSize();
 window.addEventListener("resize", updateWindowSize);
 
-// hero title horizontall scroll
-// const sections = gsap.utils.toArray(".hero-title");
-// gsap.to(sections, {
-// 	x: (i) => {
-// 		if (i % 2 === 0) {
-// 			return -(sections[i].scrollWidth - window.innerWidth * 0.1);
-// 		} else {
-// 			return +(sections[i].scrollWidth - window.innerWidth * -0.05);
-// 		}
-// 	},
-// 	ease: "none",
-// 	scrollTrigger: {
-// 		markers: false,
-// 		trigger: sections,
-// 		pin: false,
-// 		scrub: true,
-// 		invalidateOnRefresh: true
-// 	}
-// });
-
 gsap.to(".hero-title-1", {
 	xPercent: -10,
 	ease: "none",
 	scrollTrigger: {
-		trigger: ".hero-title",
+		trigger: ".hero",
 		start: "top bottom",
 		end: "bottom top",
 		scrub: 0
@@ -525,7 +494,7 @@ gsap.to(".hero-title-2", {
 	xPercent: 10,
 	ease: "none",
 	scrollTrigger: {
-		trigger: ".hero-title",
+		trigger: ".hero",
 		start: "top bottom",
 		end: "bottom top",
 		scrub: 0
@@ -535,14 +504,17 @@ gsap.to(".hero-title-2", {
 gsap.to(".hero-subtitle", {
 	yPercent: 700,
 	scale: 2,
-	ease: "none",
+	ease: "linear",
+	opacity: 0,
 	scrollTrigger: {
-		trigger: ".hero-title",
+		trigger: ".hero",
 		start: "top bottom",
 		end: "bottom top",
 		scrub: 0
 	}
 });
+
+// ===========================================================
 
 // =======================================================================================================================================
 

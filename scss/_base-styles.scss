@@ -36,6 +36,7 @@ html,
 body {
 	color: var(--text-color);
 	background-color: var(--bg-site);
+	user-select: none;
 
 	@include xs {
 		min-width: 320px;

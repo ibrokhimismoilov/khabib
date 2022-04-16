@@ -24,3 +24,21 @@ animation
 		transform: translateX(0);
 	}
 }
+
+@keyframes rotate {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0);
+	}
+}
+
+@keyframes heroOrnate {
+	from {
+		left: 0%;
+	}
+	to {
+		left: -400%;
+	}
+}
