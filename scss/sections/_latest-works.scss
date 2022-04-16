@@ -2,6 +2,7 @@
 	position: relative;
 	z-index: 1;
 	min-height: 100vh;
+	padding-bottom: 100px;
 
 	&__head {
 		@include flex(row, center, space-between);
@@ -63,6 +64,7 @@
 	&__item {
 		overflow: hidden;
 		width: 1140px;
+		min-width: 1140px;
 		margin-right: 60px;
 
 		.img {
@@ -99,7 +101,11 @@
 }
 
 .horizontal {
-	.pin-wrap,
+	.pin-wrap {
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+	}
 	.animation-wrap {
 		display: flex;
 		position: relative;

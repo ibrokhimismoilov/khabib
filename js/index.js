@@ -261,14 +261,6 @@ dizzy
 		0
 	)
 	.to(
-		".dizzy",
-		{
-			duration: 0.01,
-			opacity: 0.3
-		},
-		0
-	)
-	.to(
 		".mouth",
 		{
 			duration: 0.01,
@@ -315,40 +307,10 @@ dizzy
 		0
 	)
 	.to(
-		".dizzy-1",
-		{
-			rotate: -360,
-			duration: 1,
-			repeat: 5,
-			transformOrigin: "50% 50%",
-			ease: "none"
-		},
-		0.01
-	)
-	.to(
-		".dizzy-2",
-		{
-			rotate: 360,
-			duration: 1,
-			repeat: 5,
-			transformOrigin: "50% 50%",
-			ease: "none"
-		},
-		0.01
-	)
-	.to(
 		".eyes",
 		{
 			duration: 0.01,
 			opacity: 1
-		},
-		4
-	)
-	.to(
-		".dizzy",
-		{
-			duration: 0.01,
-			opacity: 0
 		},
 		4
 	)
