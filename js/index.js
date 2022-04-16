@@ -138,7 +138,7 @@ meTl.from(
 		yPercent: 100,
 		ease: "elastic.out(0.5, 0.4)"
 	},
-	0
+	0.5
 )
 	.from(
 		".head , .hair , .shadow",
@@ -478,6 +478,8 @@ function updateWindowSize() {
 }
 updateWindowSize();
 window.addEventListener("resize", updateWindowSize);
+
+// ====================================================================================================================
 
 gsap.to(".hero-title-1", {
 	xPercent: -10,
