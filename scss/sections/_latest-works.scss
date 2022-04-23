@@ -2,7 +2,7 @@
 	position: relative;
 	z-index: 1;
 	min-height: 100vh;
-	padding-bottom: 100px;
+	padding-bottom: 50px;
 
 	&__head {
 		@include flex(row, center, space-between);
@@ -65,7 +65,8 @@
 		overflow: hidden;
 		width: 1140px;
 		min-width: 1140px;
-		margin-right: 60px;
+		margin: 0 30px;
+		// margin-right: 60px;
 
 		.img {
 			height: 640px;
@@ -75,26 +76,39 @@
 
 			img {
 				@include fill();
+				@include transition;
 			}
 		}
 
 		.content {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			@include flex();
+
 			&__title {
-				font-family: $allCaps, sans-serif;
-				font-style: normal;
-				font-weight: 500;
-				font-size: 21px;
-				line-height: 120%;
-				letter-spacing: -0.02em;
+				@include font(var(--text-color), 21px, 120%, $allCaps, 500);
 				text-transform: capitalize;
+				@include sliceText();
 			}
 
 			&__tags {
 				@include flex();
 				gap: 12px;
+				margin-left: auto;
+
 				&-item {
+					@include font(var(--text-color), 14px, 120%, $mainP);
 					border: 1px solid var(--border-color);
+					padding: 9px 17px;
+					border: 1px solid var(--border-color);
+					border-radius: 48px;
 				}
+			}
+		}
+
+		&:hover {
+			img {
+				transform: scale(1.1);
 			}
 		}
 	}

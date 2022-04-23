@@ -30,6 +30,23 @@ horizontalSections.forEach(function (sec, i) {
 			}
 		}
 	);
+
+	// make the right edge "stick" to the scroll bar. force3D: true improves performance
+	gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
+});
+
+let proxy = { skew: 0 },
+	skewSetter = gsap.quickSetter(".latest-works__item", "skew", "deg"), // fast
+	clamp = gsap.utils.clamp(-20, 20); // don't let the skew go beyond 20 degrees.
+
+ScrollTrigger.create({
+	onUpdate: (self) => {
+		let skew = clamp(self.getVelocity() / -300);
+		if (Math.abs(skew) > Math.abs(proxy.skew)) {
+			proxy.skew = skew;
+			gsap.to(proxy, { skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew) });
+		}
+	}
 });
 
 function smoothScroll(content, viewport, smoothness) {
@@ -444,7 +461,7 @@ window.addEventListener("resize", updateWindowSize);
 // ====================================================================================================================
 
 gsap.to(".hero-title-1", {
-	xPercent: -10,
+	xPercent: -15,
 	ease: "none",
 	scrollTrigger: {
 		trigger: ".hero",
@@ -455,7 +472,7 @@ gsap.to(".hero-title-1", {
 });
 
 gsap.to(".hero-title-2", {
-	xPercent: 10,
+	xPercent: 15,
 	ease: "none",
 	scrollTrigger: {
 		trigger: ".hero",
@@ -465,18 +482,18 @@ gsap.to(".hero-title-2", {
 	}
 });
 
-gsap.to(".hero-subtitle", {
-	yPercent: 700,
-	scale: 2,
-	ease: "linear",
-	opacity: 0,
-	scrollTrigger: {
-		trigger: ".hero",
-		start: "top bottom",
-		end: "bottom top",
-		scrub: 0
-	}
-});
+// gsap.to(".hero-subtitle", {
+// 	// yPercent: 700,
+// 	// scale: 0,
+// 	ease: "linear",
+// 	opacity: 0,
+// 	scrollTrigger: {
+// 		trigger: ".hero",
+// 		start: "top bottom",
+// 		end: "bottom top",
+// 		scrub: 0
+// 	}
+// });
 
 // ===========================================================
 

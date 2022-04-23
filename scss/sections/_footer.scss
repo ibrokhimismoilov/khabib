@@ -1,1 +1,252 @@
-// .footer
+.footer {
+	border-top: 1px solid var(--border-color-light);
+	position: relative;
+	&-bg {
+		position: absolute;
+		left: -112px;
+		top: 184px;
+		width: 1070px;
+		height: 600px;
+
+		img {
+			@include fill();
+		}
+	}
+
+	&__top {
+		@include flex();
+		padding-top: 326px;
+		padding-bottom: 230px;
+	}
+
+	&__left {
+		margin-right: auto;
+	}
+
+	&__logo {
+		width: 217px;
+		height: 217px;
+		margin-bottom: 37px;
+
+		img {
+			filter: drop-shadow(0px 0px 83px #000000);
+			@include fill();
+		}
+		&-text {
+			p {
+				@include font(var(--text-color), 18px, 165%, $mainP);
+				text-transform: capitalize;
+
+				i {
+					text-transform: capitalize;
+					font-family: $formText;
+				}
+			}
+		}
+	}
+
+	&__right {
+		max-width: 700px;
+		width: 100%;
+		@include flex(column, flex-end, center);
+	}
+}
+
+.contact {
+	width: 100%;
+
+	&-item {
+		@include flex(row, center, space-between);
+		width: 100%;
+		margin-bottom: 10px;
+
+		&__label {
+			@include font(var(--text-color), 21px, 26px, $formText);
+			font-style: italic;
+		}
+
+		&__group {
+			width: 460px;
+			background: transparent;
+			position: relative;
+			overflow: hidden;
+
+			&-input {
+				width: 100%;
+				height: 100%;
+				padding-top: 8px;
+				padding-bottom: 8px;
+				text-align: right;
+				background: transparent;
+				border: none 0;
+				@include font(var(--text-color), 21px, 26px, $mainP);
+			}
+
+			&::placeholder {
+				color: var(--text-color);
+				opacity: 0.5;
+			}
+
+			&-line {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				height: 10px;
+				width: 300%;
+				pointer-events: none;
+				transform: translateX(-66.66%);
+				transition: transform 0s cubic-bezier(0, 0.25, 0.5, 1);
+			}
+
+			&-input:focus + &-line {
+				transform: translateX(0);
+				transition: transform 0.8s cubic-bezier(0, 0.25, 0.5, 1);
+			}
+		}
+
+		// &__input {
+		// 	width: 460px;
+		// 	background: transparent;
+		// 	position: relative;
+
+		// 	input {
+		// 		width: 100%;
+		// 		height: 100%;
+		// 		padding-top: 8px;
+		// 		text-align: right;
+		// 		padding-bottom: 8px;
+		// 		background: transparent;
+		// 		border: none 0;
+		// 		@include font(var(--text-color), 21px, 26px, $mainP);
+		// 	}
+
+		// 	&::placeholder {
+		// 		@include font(var(--text-color), 21px, 26px, $mainP);
+		// 		opacity: 0.5;
+		// 	}
+
+		// 	&-line {
+		// 		position: absolute;
+		// 		left: 0;
+		// 		right: 0;
+		// 		bottom: -3px;
+		// 		height: 59px;
+		// 		width: 300%;
+		// 		transform: translateX(-66.66%);
+		// 		opacity: 0.1;
+		// 		pointer-events: none;
+		// 		transition: opacity 0.4s, -webkit-transform 0s cubic-bezier(0, 0.25, 0.5, 1);
+		// 		transition: transform 0s cubic-bezier(0, 0.25, 0.5, 1), opacity 0.4s;
+		// 		transition: transform 0s cubic-bezier(0, 0.25, 0.5, 1), opacity 0.4s, -webkit-transform 0s cubic-bezier(0, 0.25, 0.5, 1),
+		// 			-moz-transform 0s cubic-bezier(0, 0.25, 0.5, 1), -o-transform 0s cubic-bezier(0, 0.25, 0.5, 1);
+		// 	}
+		// }
+
+		.wavy-input-light {
+			position: relative;
+			display: block;
+			line-height: 0;
+			overflow: hidden;
+			contain: content;
+			width: 460px;
+		}
+
+		.wavy-input-light-line {
+			img {
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 300%;
+				opacity: 1;
+				pointer-events: none;
+				transform: translateX(-66.66%);
+				bottom: -3px;
+				width: 300%;
+				transition: opacity 0.4s, -webkit-transform 0s cubic-bezier(0, 0.25, 0.5, 1);
+				transition: transform 0s cubic-bezier(0, 0.25, 0.5, 1), opacity 0.4s;
+				transition: transform 0s cubic-bezier(0, 0.25, 0.5, 1), opacity 0.4s, -webkit-transform 0s cubic-bezier(0, 0.25, 0.5, 1),
+					-moz-transform 0s cubic-bezier(0, 0.25, 0.5, 1), -o-transform 0s cubic-bezier(0, 0.25, 0.5, 1);
+			}
+		}
+
+		.wavy-input-light input,
+		.wavy-input-light textarea {
+			position: relative;
+			padding: 15px 0;
+			width: 100%;
+			z-index: 1;
+			// color: #000;
+			border: 0;
+			outline: 0;
+			resize: none;
+			background: 0 0;
+			border-radius: 0;
+			text-align: right;
+			transition: all 0.3s, height 0s;
+			@include font(var(--text-color), 21px, 26px, $mainP);
+		}
+
+		.wavy-checkbox-rounded,
+		.wavy-input-light,
+		label > input:focus ~ input.wavy-checkbox-rounded-box + .wavy-input-light-line,
+		.wavy-checkbox-rounded .wavy-input-light label > input:focus ~ textarea.wavy-checkbox-rounded-box + .wavy-input-light-line,
+		.wavy-input-light .wavy-checkbox-rounded label > input:focus ~ input.wavy-checkbox-rounded-box + .wavy-input-light-line,
+		.wavy-input-light .wavy-checkbox-rounded label > input:focus ~ textarea.wavy-checkbox-rounded-box + .wavy-input-light-line,
+		.wavy-input-light input:focus + .wavy-input-light-line,
+		.wavy-input-light textarea:focus + .wavy-input-light-line {
+			opacity: 1;
+			transform: translateX(0);
+			transition-duration: 0.8s, 0.4s;
+		}
+
+		.wavy-input-light input:hover + .wavy-input-light-line,
+		.wavy-input-light textarea:hover + .wavy-input-light-line {
+			opacity: 1;
+		}
+	}
+
+	&-drag {
+		position: relative;
+		max-width: 415px;
+		width: 100%;
+
+		&__wrapper {
+			display: flex;
+			align-items: center;
+			padding-top: 50px;
+			justify-content: space-between;
+			overflow: hidden;
+		}
+
+		&__item {
+			position: relative;
+			width: 112px;
+			height: 112px;
+			background: var(--bg-site);
+			z-index: 1;
+			cursor: grab;
+
+			&:first-child {
+				&::before {
+					position: absolute;
+					top: 50%;
+					left: 100%;
+					transform: translateY(-50%);
+					content: "---------------------------------------------";
+					letter-spacing: 5px;
+					white-space: nowrap;
+				}
+			}
+
+			img {
+				@include fill(contain);
+			}
+		}
+
+		&__text {
+			text-align: center;
+			@include font(var(--text-color), 21px, 27px, $formText);
+			opacity: 0.4;
+		}
+	}
+}
